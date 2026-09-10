@@ -16,7 +16,7 @@ export default function LoginPage() {
   if (status === 'loading') {
     return (
       <div className="flex flex-col items-center justify-center h-screen text-foreground">
-        <div className="">加载中...</div>
+        <div>加载中...</div>
       </div>
     );
   }
@@ -26,7 +26,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-foreground">
+    <div className="flex flex-col items-center justify-center h-screen text-foreground p-6">
       <div className="max-w-md w-full p-8 space-y-6 text-center border border-border rounded-xl bg-card">
         <h1 className="text-3xl font-bold tracking-tight">ACGPlay</h1>
         <p className="text-muted-foreground text-sm">

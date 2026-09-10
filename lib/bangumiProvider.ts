@@ -35,7 +35,7 @@ export default function BangumiProvider<P extends BangumiProfile>(
     token: {
       url: 'https://bgm.tv/oauth/access_token',
       async request({ params }: { params: Record<string, object> }) {
-        console.log('params', params);
+        // console.log('params', params);
         const body = new URLSearchParams();
         body.append('grant_type', 'authorization_code');
         body.append('client_id', options.clientId ?? '');

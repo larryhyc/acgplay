@@ -25,7 +25,7 @@ acgplay/
 │       └── player-controls.tsx   # 播放控制器与选集条
 │
 ├── lib/                          # 核心服务与工具函数
-│   ├── auth.ts                   # Cookie 读写与 Token 管理
+│   ├── bangumiProvider           # bangumi第三方登录配置
 │   ├── bangumi.ts                # Bangumi Open API 请求封装
 │   ├── dandan.ts                 # 弹弹play 弹幕 API 请求封装
 │   ├── mikan.ts                  # 蜜柑计划 RSS/磁力链接解析
