@@ -20,7 +20,7 @@ export default function Home() {
   }
 
   return (
-    <div className="p-6 w-screen h-screen">
+    <div className="p-6">
       <HederConponent />
       <div className="p-4 flex items-center gap-4"></div>
     </div>
