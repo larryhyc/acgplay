@@ -8,7 +8,7 @@ export const HeaderComponent = () => {
   const { data: session } = useSession();
 
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between items-center mb-8">
       <div className="text-xl">探索</div>
       <div className="flex gap-4 items-center">
         <div>

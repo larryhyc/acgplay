@@ -25,9 +25,9 @@ export function AppSidebar() {
   };
 
   return (
-    <aside className="w-24 mt-30 h-full shrink-0 border-r border-white/10 bg-background/50 backdrop-blur-md flex flex-col justify-between py-6">
+    <aside className="w-24 h-full shrink-0 border-r border-white/10 bg-background/50 backdrop-blur-md flex flex-col justify-between py-6">
       {/* 顶部主导航列表 */}
-      <nav className="flex flex-col items-center gap-4">
+      <nav className="flex mt-42 flex-col items-center gap-4">
         {navItems.map((item) => {
           const isActive = active === item.title;
           return (

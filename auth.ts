@@ -31,7 +31,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       if (token.accessToken) {
         const customSession = session as unknown as Session;
         customSession.accessToken = token.accessToken as string;
-        console.log('session', session);
+        // console.log('session', session);
       }
       return session;
     },
