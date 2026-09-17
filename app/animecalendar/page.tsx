@@ -2,6 +2,7 @@
 import { ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import CalendarComponent from '@/components/anime/calendarComponent';
 
 const AnimeCalendar = () => {
   const router = useRouter();
@@ -14,6 +15,7 @@ const AnimeCalendar = () => {
         </Button>
         <span className="text-xl">新番时间表</span>
       </div>
+      <CalendarComponent />
     </div>
   );
 };
