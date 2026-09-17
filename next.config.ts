@@ -46,6 +46,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'lain.bgm.tv',
       },
+      {
+        protocol: 'http',
+        hostname: 'lain.bgm.tv',
+      },
     ],
   },
 };

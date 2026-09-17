@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
-import { AnimeCalendarItem } from '@/type/animeCalendar';
+import { AnimeCalendarItem } from '@/types/animeCalendar';
+
+const JAPANESE_KANA_REGEX = /[\u3040-\u309F\u30A0-\u30FF]/;
 
 export async function GET() {
   try {
@@ -8,10 +10,15 @@ export async function GET() {
     const data = await res.json();
 
     const resData = data.map((item: AnimeCalendarItem) => {
-      // console.log(item);
+      const validItems = item.items.filter((animeItem) => {
+        const hasChineseName = animeItem.name_cn !== '';
+        const isJapaneseAnime = JAPANESE_KANA_REGEX.test(animeItem.name || '');
+        return hasChineseName && isJapaneseAnime;
+      });
+
       return {
         weekday: item.weekday.cn,
-        items: item.items.map((animeItem) => {
+        items: validItems.map((animeItem) => {
           return {
             id: animeItem.id,
             name: animeItem.name_cn || animeItem.name,

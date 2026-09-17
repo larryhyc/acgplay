@@ -9,7 +9,7 @@ const AnimeCalendar = () => {
 
   return (
     <div className="p-6">
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center mb-4">
         <Button onClick={() => router.back()}>
           <ArrowLeft />
         </Button>
