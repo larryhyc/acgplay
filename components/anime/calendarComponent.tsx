@@ -1,4 +1,4 @@
-'use cilent';
+'use client';
 import { useEffect, useState } from 'react';
 import { AnimeCalendar } from '@/types/animeCalendar';
 import { Card } from '@/components/ui/card';
@@ -37,11 +37,6 @@ const CalendarComponent = () => {
     fetchCalendar();
   }, []);
 
-  // console.log(calendarData);
-  calendarData.map((item, i) => {
-    console.log('key', i);
-    console.log('item', item);
-  });
 
   if (error) return <div className="text-red-500">错误: {error}</div>;
 
@@ -56,7 +51,6 @@ const CalendarComponent = () => {
                   key={itemIndex}
                   className="p-0 border-0 overflow-hidden mb-6"
                 >
-                  {/* 关键：保持与实际图片完全一样的 3:4 比例骨架 */}
                   <Skeleton className="aspect-3/4 w-full rounded-sm" />
                 </Card>
               ))}
@@ -67,7 +61,7 @@ const CalendarComponent = () => {
               <Card className="mb-6">{item.weekday}</Card>
               {item.items.map((anime) => {
                 return (
-                  <Card key={anime.id} className="mb-6 p-3 h-80">
+                  <Card key={anime.id} className="mb-6 p-3 h-80 relative">
                     <a
                       href={`https://bgm.tv/subject/${anime.id}`}
                       target="_blank"

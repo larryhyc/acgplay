@@ -11,7 +11,9 @@ export type AnimeCalendarItem = {
     name: string;
     name_cn: string;
     air_date: string;
-    score: number;
+    rating: {
+      score: number;
+    };
     images: {
       large: string;
       common: string;
@@ -38,4 +40,17 @@ export type AnimeCalendar = {
     };
     name: string;
   }>;
+};
+
+export type AnimeHost = {
+  id: number;
+  name: string;
+  image: {
+    large: string;
+    common: string;
+    medium: string;
+    small: string;
+    grid: string;
+  };
+  score: number;
 };

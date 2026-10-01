@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import HederConponent from '@/components/layout/headerConponent';
 import { CalendarDays } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import HostAnime from '@/components/anime/hostAnime';
 
 function Host() {
   const route = useRouter();
@@ -44,6 +45,7 @@ export default function Home() {
     <div className="p-6">
       <HederConponent />
       <Host />
+      <HostAnime />
     </div>
   );
 }
