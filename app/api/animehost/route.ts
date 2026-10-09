@@ -21,8 +21,8 @@ export async function GET() {
       });
 
       const hotItems = validItems.sort((a, b) => {
-        const scoreA = a.rating.score; // 容错处理：若没有评分则按 0 分处理
-        const scoreB = b.rating.score;
+        const scoreA = a.rating.score || 0; // 容错处理：若没有评分则按 0 分处理
+        const scoreB = b.rating.score || 0;
         return scoreB - scoreA;
       });
 
@@ -33,7 +33,7 @@ export async function GET() {
           id: animeItem.id,
           name: animeItem.name_cn || animeItem.name,
           image: animeItem.images,
-          score: animeItem.rating.score,
+          score: animeItem.rating.score || 0,
         };
       });
 
