@@ -23,17 +23,19 @@ export async function GET() {
             id: animeItem.id,
             name: animeItem.name_cn || animeItem.name,
             image: animeItem.images,
-            score: animeItem.score,
           };
         }),
       };
     });
 
     // console.log(resData);
-
-    return NextResponse.json(resData);
+    return NextResponse.json({ ok: true, data: resData });
   } catch (error) {
-    console.log(`animecalendar报错:${error}`);
-    return NextResponse.json({ error: '服务器发生错误' }, { status: 500 });
+    console.error(`animecalendar报错:${error}`);
+    return NextResponse.json({
+      ok: false,
+      error: '服务器发生错误',
+      status: 500,
+    });
   }
 }

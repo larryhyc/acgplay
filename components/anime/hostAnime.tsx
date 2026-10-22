@@ -45,7 +45,7 @@ const HostAnime = () => {
         className="w-full relative"
         plugins={[
           Autoplay({
-            delay: 5000,
+            delay: 3000,
           }),
         ]}
       >
@@ -60,7 +60,7 @@ const HostAnime = () => {
                     key={index}
                     className="p-0 border-0 overflow-hidden mb-6"
                   >
-                    <Skeleton className="aspect-4/4 w-full rounded-sm" />
+                    <Skeleton className="aspect-4/3 w-full rounded-sm" />
                   </Card>
                 </CarouselItem>
               ))
@@ -73,8 +73,8 @@ const HostAnime = () => {
                     <CardContent className="p-0 w-full h-full relative">
                       <Image
                         src={item.image.large}
-                      alt={item.name}
-                      fill
+                        alt={item.name}
+                        fill
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
 

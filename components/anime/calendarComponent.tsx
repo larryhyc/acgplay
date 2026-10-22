@@ -26,9 +26,14 @@ const CalendarComponent = () => {
         setLoading(true);
         const res = await fetch('/api/animecalendar');
         const result = await res.json();
-        setCalendarData(result);
+        if (result.ok) {
+          setCalendarData(result.data);
+        } else {
+          setError(result.error);
+        }
       } catch (error) {
-        setError(`${error}加载失败`);
+        console.error(error);
+        setError('加载失败');
       } finally {
         setLoading(false);
       }
@@ -36,7 +41,6 @@ const CalendarComponent = () => {
 
     fetchCalendar();
   }, []);
-
 
   if (error) return <div className="text-red-500">错误: {error}</div>;
 
